@@ -11,6 +11,7 @@ import {
 import Carousel from "react-native-snap-carousel";
 import { categories, sources } from "../API/api";
 import { NewsContext } from "../API/Context";
+import Search from "../components/Search";
 
 const DiscoverScreen = () => {
   const windowWidth = Dimensions.get("window").width;
@@ -20,16 +21,7 @@ const DiscoverScreen = () => {
 
   return (
     <View style={styles.discover}>
-      <TextInput
-        style={{
-          ...styles.search,
-          backgroundColor: darkTheme ? "black" : "lightgrey",
-        }}
-        // onChangeText={onChangeNumber}
-        // value={number}
-        placeholder="Search for news"
-        placeholderTextColor={darkTheme ? "white" : "grey"}
-      />
+      <Search />
       <Text
         style={{ ...styles.subtitle, color: darkTheme ? "white" : "black" }}
       >
@@ -86,15 +78,6 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
   },
-  search: {
-    width: "100%",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 10,
-    fontSize: 15,
-    color: "white",
-    marginBottom: 15,
-  },
   subtitle: {
     fontSize: 20,
     fontWeight: "bold",
@@ -123,14 +106,14 @@ const styles = StyleSheet.create({
   sources: {
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     paddingVertical: 15,
   },
   sourceContainer: {
     height: 150,
     width: "40%",
     borderRadius: 10,
-    margin: 10,
+    margin: 15,
     backgroundColor: "#cc313d",
   },
   sourceImage: {
